@@ -1,0 +1,62 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 75130,
+      "matches_public": null,
+      "path": "paper.pdf",
+      "public_sha256": null,
+      "sha256": "aa102b2c254cc785cdd3e6a1880fd60008c64e5a0e19e98cac23bf2a89f26396"
+    },
+    "source": {
+      "bytes": 14150,
+      "matches_public": null,
+      "path": "manuscript/",
+      "public_sha256": null,
+      "sha256": "2a6ba6d8f60e700da4b7252088e84ce50bb4ea230d1b4152bbb3250254a1c25a"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Conjectures 3 and 4 in Section 5.2 of Huang, Stoica, Xia and Zhong, arXiv:2006.06716v1, printed page 32, are refuted by positive nonconstant solutions of their tree equations of motion. For every integer q >= 2, r > 0 with r != 1 and t > 0, spine lengths ((r^2+1)/(r+1)) t r^n and constant-length branches t r^n give a solution. Every branch vertex has equal incident lengths. More generally, a positive solution on any connected nontrivial tree of maximum degree at most q+1 extends to T_q by attaching constant-length branches without changing its original vertex ratios. The source's line classification yields arbitrary two-choice spine patterns in all q >= 2. The geometric-spine solutions have nonconstant tree curvature.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": "10.5281/zenodo.23935003",
+    "current_version": 2,
+    "doi": "10.5281/zenodo.23935004",
+    "lean_source": {
+      "revision": "50f2a97bb5e704842f2c32c6095f68a0dc62c779",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/50f2a97bb5e704842f2c32c6095f68a0dc62c779/D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "url": "/api/v1/collected-papers/huang-stoica-xia-zhong-2020-tree-equations-nonconstant/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-05T08:03:39.239994882Z",
+    "record": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant",
+    "repository_name": "6aec385b5d5a8c54539a83af",
+    "source": {
+      "url": "/api/v1/collected-papers/huang-stoica-xia-zhong-2020-tree-equations-nonconstant/files/source?version=2"
+    },
+    "title": "Counterexamples to Conjectures 3 and 4 of Huang, Stoica, Xia and Zhong (arXiv:2006.06716v1, Section 5.2, printed page 32)",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-05T08:03:39.239994882Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant"
+  }
+}

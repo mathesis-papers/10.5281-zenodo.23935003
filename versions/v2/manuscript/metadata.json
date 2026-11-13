@@ -1,0 +1,23 @@
+{
+  "id": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant",
+  "revision": 2,
+  "problem_ids": [
+    "huang-stoica-xia-zhong-2020-tree-equations-nonconstant"
+  ],
+  "topic": "Positive nonconstant solutions of the tree equations; Conjectures 3 and 4, arXiv:2006.06716v1, Section 5.2, printed page 32",
+  "title": "Counterexamples to Conjectures 3 and 4 of Huang, Stoica, Xia and Zhong (arXiv:2006.06716v1, Section 5.2, printed page 32)",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "Conjectures 3 and 4 in Section 5.2 of Huang, Stoica, Xia and Zhong, arXiv:2006.06716v1, printed page 32, are refuted by positive nonconstant solutions of their tree equations of motion. For every integer q >= 2, r > 0 with r != 1 and t > 0, spine lengths ((r^2+1)/(r+1)) t r^n and constant-length branches t r^n give a solution. Every branch vertex has equal incident lengths. More generally, a positive solution on any connected nontrivial tree of maximum degree at most q+1 extends to T_q by attaching constant-length branches without changing its original vertex ratios. The source's line classification yields arbitrary two-choice spine patterns in all q >= 2. The geometric-spine solutions have nonconstant tree curvature.",
+  "summary": "Positive nonconstant solutions refute Conjecture 4 on T_2 and Conjecture 3 on every T_q with q >= 2. A ratio-preserving extension principle lifts all positive line solutions to higher degree; written proofs include arbitrary {2,3} reciprocal-ratio spine patterns, a global constant-ratio criterion and nonconstant-curvature formulas.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/50f2a97bb5e704842f2c32c6095f68a0dc62c779/D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.lean"
+}

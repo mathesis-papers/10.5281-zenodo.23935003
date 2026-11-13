@@ -1,0 +1,313 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,array,booktabs}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\E}{\mathcal E}
+\title{Counterexamples to Conjectures 3 and 4 of Huang, Stoica, Xia and Zhong\\
+\large arXiv:2006.06716v1, Section 5.2, printed page 32}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{November 3, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Conjectures 3 and 4 in Section 5.2 of Huang, Stoica, Xia and Zhong,
+arXiv:2006.06716v1, printed page 32, are refuted by positive nonconstant solutions of their
+tree equations of motion. For every integer $q\geq2$ and every real
+$r>0$, $r\ne1$, we construct a solution on the $(q+1)$-regular tree.
+Its lengths vary geometrically along a bi-infinite spine and are constant
+within each attached branch. Every branch vertex has equal incident
+lengths, although the solution is globally nonconstant. The cubic case
+$q=r=2$ gives branch lengths $2^n$ and spine lengths $(5/3)2^n$.
+More generally, any positive solution on a nontrivial tree of maximum degree at most
+$q+1$ extends to $T_q$ by attaching constant-length branches without
+changing its original vertex ratios. Applied to the source's classified
+line solutions, this gives arbitrary two-choice scale patterns on every
+$T_q$, $q\geq2$. The geometric-spine solutions have nonconstant tree
+curvature.
+\end{abstract}
+
+\section{The statements and equations}
+Huang, Stoica, Xia and Zhong~\cite{HSXZ}, Section 5.2, Conjecture 4
+(printed p.~32), assert constancy of every positive solution on $T_2$.
+Their Conjecture 3, on the same page, asserts global constancy if even one
+vertex has equal incident lengths. Here $T_q$ denotes the infinite
+$(q+1)$-regular tree. We give explicit counterexamples to both statements.
+
+For positive edge lengths $\ell_{ij}=\ell_{ji}$, put
+\begin{equation}\label{eq:definitions}
+ c_i=\sum_{j\sim i}\ell_{ij}^{-1},\qquad
+ d_i=\sum_{j\sim i}\ell_{ij}^{-2},\qquad R_i=c_i/d_i.
+\end{equation}
+Every denominator is positive. On a tree the unique simple path between
+adjacent vertices is their edge; deleting backtracking from any other
+finite walk decreases its length. Thus their shortest-path edge length
+$P_{\langle ij\rangle}$ equals $\ell_{ij}$. Equation (3.1) of~\cite{HSXZ}
+is precisely
+\begin{equation}\label{eq:motion}
+ \E_{ij}:=\frac{R_i^2+R_j^2}{\ell_{ij}}-R_i-R_j=0.
+\end{equation}
+No boundary condition is imposed here.
+
+\begin{theorem}\label{thm:family}
+Fix an integer $q\geq2$, a scale $t>0$ and a real $r>0$ with $r\ne1$.
+There is a positive nonconstant solution of \eqref{eq:motion} on $T_q$
+with the following lengths. Set
+\begin{equation}\label{eq:parameters}
+ s_n=t r^n\quad(n\in\mathbb Z),\qquad
+ a=\frac{r^2+1}{r+1}.
+\end{equation}
+Choose a bi-infinite spine $(v_n)_{n\in\mathbb Z}$. The edge $v_nv_{n+1}$
+has length $a s_n$. At each $v_n$ attach $q-1$ disjoint rooted
+$q$-ary trees; every edge in these branches, including each attachment
+edge, has length $s_n$. The ratio $R_i$ equals $s_n$ at $v_n$ and
+at every vertex of a branch attached there.
+\end{theorem}
+
+\begin{proof}
+Start with the doubly infinite path. A branch attached to $v_n$ has
+vertices indexed by finite words over $\{1,\ldots,q\}$; its empty word
+is joined to $v_n$, and a word is joined to each of its $q$ one-letter
+extensions. Use a separate copy for each of the $q-1$ branches.
+Each spine vertex has two spine neighbors and $q-1$ branch neighbors.
+Each branch vertex has one parent and $q$ children. The graph is
+therefore simple, locally finite and $(q+1)$-regular. It is connected:
+following parents reaches the spine in finitely many steps. Each branch
+and the spine are acyclic, and a branch has exactly one attachment edge,
+so no cycle can pass from a branch to the spine and return. Hence the
+graph is a realization of $T_q$.
+
+All lengths are positive and symmetric. At $v_n$, the incident lengths
+are $a s_n/r$, $a s_n$, and $q-1$ copies of $s_n$. Consequently
+\begin{align}
+ c_{v_n}&=\frac1{s_n}\left(\frac{r+1}{a}+q-1\right),\label{eq:c}\\
+ d_{v_n}&=\frac1{s_n^2}\left(\frac{r^2+1}{a^2}+q-1\right).\label{eq:d}
+\end{align}
+The two parenthesized factors are equal, because
+$a(r+1)=r^2+1$. They are strictly positive, so $R_{v_n}=s_n$.
+At a branch vertex all $q+1$ incident lengths equal $s_n$; its sums
+are $(q+1)/s_n$ and $(q+1)/s_n^2$, giving $R_i=s_n$ as well.
+
+For a branch or attachment edge, both endpoint ratios and the edge
+length equal $s_n$. Its residual is $2s_n^2/s_n-2s_n=0$.
+For a spine edge $v_nv_{n+1}$, the endpoint ratios are $s_n$ and
+$r s_n$, whence
+\[
+ \E_{v_nv_{n+1}}
+ =s_n\left(\frac{1+r^2}{a}-1-r\right)=0.
+\]
+These cases exhaust the edges, and the residual is symmetric in its
+endpoints. Finally the attachment edge at $v_0$ has length $t$,
+whereas $v_0v_1$ has length $at$. These differ: $a-1=r(r-1)/(r+1)$
+is nonzero. Thus the solution is not constant.
+\end{proof}
+
+\begin{corollary}\label{cor:conjectures}
+Conjecture 4 of~\cite{HSXZ} is false. Conjecture 3 is false on $T_q$
+for every $q\geq2$, even when equal incident lengths are required at
+every vertex outside a bi-infinite path.
+\end{corollary}
+\begin{proof}
+Take $q=2$, $r=2$, $t=1$ in Theorem~\ref{thm:family} to refute
+Conjecture 4. For any $q\geq2$, every branch vertex has equal incident
+lengths, so the same theorem contradicts the conclusion of Conjecture 3.
+There is at least one branch at every spine vertex.
+\end{proof}
+
+For the cubic example the incident lengths at $v_n$ are
+$(5/6)2^n$, $(5/3)2^n$, and $2^n$. Direct substitution gives
+$c_{v_n}=14/(5\cdot2^n)$ and $d_{v_n}=14/(5\cdot2^{2n})$.
+The attachment edge at $v_0$ has length $1$ and the next spine edge
+has length $5/3$.
+
+\section{Extension of the source's line solutions}
+The cancellation at branch vertices gives a general extension principle.
+It applies to all the line solutions in Section 5.1 of~\cite{HSXZ},
+not just to a single geometric progression.
+
+\begin{lemma}\label{lem:extension}
+Let $q\geq2$ be an integer and let $H$ be a connected locally finite tree with at least
+one edge and degrees at most $q+1$. Every positive solution of
+\eqref{eq:motion} on $H$ extends to a positive solution on $T_q$,
+preserving all original edge lengths and vertex ratios. At $i\in H$,
+attach $m_i=q+1-\deg_H(i)$ disjoint rooted $q$-ary trees and give every
+edge of each such branch, including its attachment, length $R_i$.
+\end{lemma}
+\begin{proof}
+The original tree and the attached trees are connected and acyclic,
+and every vertex now has degree $q+1$, so the enlarged graph is $T_q$.
+At an original vertex the new sums satisfy
+\[
+ c'_i=c_i+\frac{m_i}{R_i},\qquad
+ d'_i=d_i+\frac{m_i}{R_i^2},\qquad c'_i=R_i d'_i,
+\]
+because $c_i=R_i d_i$. Thus $R'_i=R_i$. Every new vertex in a branch
+attached to $i$ has all incident lengths $R_i$ and hence ratio $R_i$.
+The original edge residuals are unchanged. Every new edge, including
+each attachment, has residual $2R_i^2/R_i-2R_i=0$.
+\end{proof}
+
+\begin{corollary}\label{cor:patterns}
+Fix $q\geq2$ and any sequence $(b_n)_{n\in\mathbb Z}$ with
+$b_n\in\{2,3\}$. Choose $L_0>0$ and define positive line-edge lengths
+$L_n$ by $L_{n-1}/L_n=b_n$. There is a solution on $T_q$ with these
+spine-edge lengths. At every vertex outside the spine the incident
+lengths are equal, although the solution is nonconstant. If both choices
+occur, the spine lengths are not one geometric progression.
+\end{corollary}
+\begin{proof}
+Theorem 10 of~\cite{HSXZ}, Section 5.1, printed pp.~28--29, states that
+these line lengths solve \eqref{eq:motion}: their successive reciprocal
+ratios are $2$ or $(2+1)/(2-1)=3$. They are strictly decreasing, so the
+line solution is nonconstant. At $v_n$ its ratio is
+\[
+ R_n=\frac{L_{n-1}^{-1}+L_n^{-1}}{L_{n-1}^{-2}+L_n^{-2}}>0.
+\]
+Apply Lemma~\ref{lem:extension} to the line, attaching $q-1$ branches
+at each vertex. Both the original lengths and nonconstancy are preserved.
+Two different successive length ratios exclude a single geometric
+progression.
+\end{proof}
+
+Thus the source's prior classification on $T_1$ also supplies solutions
+in every higher degree, including even $q$. For example one may choose
+any periodic or nonperiodic binary sequence for $(b_n)$; no periodicity
+assumption enters the proof.
+
+\begin{corollary}\label{cor:global}
+For a positive solution on a connected locally finite tree with at least
+one edge, the edge lengths are globally constant if and only if the
+vertex ratios $R_i$ are globally constant.
+\end{corollary}
+\begin{proof}
+If $R_i=s$ everywhere, positivity gives $s>0$, and
+\eqref{eq:motion} gives $2s^2/\ell_{ij}-2s=0$, hence $\ell_{ij}=s$.
+Conversely, if every edge has length $s>0$, then
+$c_i=\deg(i)/s$, $d_i=\deg(i)/s^2$, and $R_i=s$.
+\end{proof}
+This is a sufficient global replacement for the failed local equal-star
+condition of Conjecture 3. The equal-star condition at one vertex does
+not force its ratio to agree with all other vertex ratios.
+
+\section{Curvature and adjacent statements}
+\begin{corollary}\label{cor:curvature}
+Every nonconstant geometric-spine solution of Theorem~\ref{thm:family}
+has nonconstant tree curvature. Put
+$B=q-1+(r+1)^2/(r^2+1)$. The curvatures of an edge wholly inside a
+branch and of its attachment edge are respectively
+\[
+ K_{\rm branch}=\frac4{q+1}-2,\qquad
+ K_{\rm attach}=\frac2B+\frac2{q+1}-2,
+\]
+and $K_{\rm attach}>K_{\rm branch}$. In the cubic $r=2$ example these
+values are $-2/3$ and $-13/21$.
+\end{corollary}
+\begin{proof}
+Equation (4.10) of~\cite{HSXZ}, printed p.~13, gives
+\[
+ K_{ij}=\frac2{\ell_{ij}^2}\left(\frac1{d_i}+\frac1{d_j}\right)
+          -\frac{R_i+R_j}{\ell_{ij}}.
+\]
+At a spine vertex $d_i=B/s_n^2$ by \eqref{eq:d}; at a branch vertex
+$d_i=(q+1)/s_n^2$. Substitute $\ell_{ij}=R_i=R_j=s_n$ for the two
+edge types. Since $r\ne1$, $(r+1)^2<2(r^2+1)$, so $B<q+1$.
+Both edge types exist for $q\geq2$, and their curvatures differ by
+$2/B-2/(q+1)>0$.
+\end{proof}
+
+The construction specializes at $r=1$ to the constant solution.
+For $r\ne1$, the spine lengths have infimum zero and are unbounded
+above, since $r^n$ has these properties over $n\in\mathbb Z$.
+In particular the spine does not approach one constant at its two
+ends, so this family does not satisfy the asymptotically constant
+boundary condition in~\cite{HSXZ}, Definition 13 and Theorem 2.
+
+Positive nonconstant solutions for odd $q$ already appear in the
+December 30, 2016 preprint of Gubser et al.~\cite{G}, Section 5,
+especially equations (97)--(99), published in 2017,
+and in~\cite{HSXZ}, Section 5.2, Theorem 12. Those constructions use
+two equally sized groups of incident edges. In the present family
+the two spine lengths and the branch length at a spine vertex are
+pairwise distinct when $r\ne1$: in addition to $a\ne1$, the equality
+$a/r=1$ would imply $r=1$. Thus these examples do not satisfy the
+half-half hypothesis of~\cite{HSXZ}, Theorems 11--12.
+
+The source's Remark 12 exhibits non-half-half solutions for odd $q$;
+Theorem~\ref{thm:family} supplies further such solutions for odd $q\geq3$
+and positive nonconstant solutions for every $q\geq2$.
+Corollary~\ref{cor:patterns} also realizes the scale-pattern flexibility
+discussed in Remark 13. These are solutions of \eqref{eq:motion}.
+Corollary~\ref{cor:curvature} distinguishes them from the
+constant-curvature metrics on finite trees studied in~\cite{BCH,Cheng}.
+
+\begin{center}
+\small
+\begin{tabular}{@{}p{0.34\textwidth}p{0.58\textwidth}@{}}
+\toprule
+Source item in~\cite{HSXZ} & Coverage\\
+\midrule
+Section 5.2, Conjecture 4 (p.~32) & Refuted-and-corrected: positive nonconstant solutions exist on $T_2$ (Corollary~\ref{cor:conjectures}).\\
+Section 5.2, Conjecture 3 (p.~32) & Refuted-and-corrected for every $q\geq2$; global constant ratios suffice (Corollaries~\ref{cor:conjectures}, \ref{cor:global}).\\
+Section 5.1, Theorem 9 and Corollary 2 (pp.~27--28) & Prior proof cited: equal incident lengths force constancy on $T_1$; nonconstant line solutions are monotone.\\
+Section 5.1, Theorem 10 (pp.~28--29) & Prior proof cited; all its positive line solutions lift to $T_q$ (Lemma~\ref{lem:extension}); two-choice patterns are proved in Corollary~\ref{cor:patterns}.\\
+Section 5, Lemma 15 (p.~27) & Prior proof cited: common scaling preserves solutions; the parameter $t$ realizes it.\\
+Section 5.2, Theorems 11--12 (pp.~29--30) & Prior proof cited for half-half solutions; their classification does not cover our geometric-spine family.\\
+Section 5.2, Remark 11 (p.~30) & Prior curvature formulas for geometric half-half solutions; our different, nonconstant curvature is proved in Corollary~\ref{cor:curvature}.\\
+Section 5.2, Remarks 12--13 (pp.~31--32) & Proved extensions: non-half-half solutions for odd $q\geq3$, solutions also in even $q\geq2$, and arbitrary two-choice spine patterns; general scale-pattern classification not covered.\\
+Section 3, Theorems 1--3, Remarks 4--5 and Corollary 1 & Not covered: their boundary hypotheses differ; the geometric spine has lengths tending to zero and infinity at opposite ends.\\
+Section 4, Theorems 4--8, Conjectures 1--2 and Remarks 6--10 & Not covered: action bounds, lattice and complete-graph extremizers concern different hypotheses and functionals.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Verification scope}
+The declaration \texttt{result :} $\neg\,\texttt{claim}$ in the pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/50f2a97bb5e704842f2c32c6095f68a0dc62c779/D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.lean}{\texttt{TreeEquationsNonconstantRefutation.lean}}
+proves the cubic counterexample.
+Here \texttt{claim} is the implication from positivity, symmetry and
+vanishing edge residuals on a locally finite cubic tree to global
+constancy. The declaration proves its negation by the $q=r=2$, $t=1$
+witness. Its supporting lemmas establish the tree and degree conditions,
+the two vertex ratios, all edge residuals, and nonconstancy.
+Theorem~\ref{thm:family}, Lemma~\ref{lem:extension} and
+Corollaries~\ref{cor:conjectures}--\ref{cor:curvature} have written
+proofs above; the line classification used in Corollary~\ref{cor:patterns}
+is the source's Theorem 10. They are not additional Lean declarations.
+The accompanying \texttt{verify.py} performs exact rational checks on
+stated finite parameter sets, neighborhoods, periodic two-choice line
+patterns and their extensions, and the curvature formulas. These checks
+illustrate the formulas rather than prove the infinite statements.
+
+\begin{thebibliography}{9}
+\bibitem{HSXZ}
+A. Huang, B. Stoica, X. Xia and X. Zhong,
+\emph{Bounds on the Ricci curvature and solutions to the Einstein
+equations for weighted graphs},
+\href{https://arxiv.org/abs/2006.06716v1}{arXiv:2006.06716v1} (2020).
+
+\bibitem{G}
+S. S. Gubser, M. Heydeman, C. Jepsen, M. Marcolli, S. Parikh,
+I. Saberi, B. Stoica and B. Trundy,
+\emph{Edge length dynamics on graphs with applications to $p$-adic AdS/CFT},
+J. High Energy Phys. \textbf{2017}, 157 (2017),
+\href{https://doi.org/10.1007/JHEP06(2017)157}{doi:10.1007/JHEP06(2017)157};
+\href{https://arxiv.org/abs/1612.09580v1}{arXiv:1612.09580v1}.
+
+\bibitem{BCH}
+S. Bai, H. Cheng and B. Hua,
+\emph{Discrete Einstein metrics on trees},
+\href{https://arxiv.org/abs/2604.22449v3}{arXiv:2604.22449v3} (2026), Section 1.
+
+\bibitem{Cheng}
+H. Cheng,
+\emph{Positive-Curvature Discrete Einstein Metrics on Trees},
+\href{https://arxiv.org/abs/2605.20862v2}{arXiv:2605.20862v2} (2026), Section 1.
+\end{thebibliography}
+
+\noindent\small\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International (CC BY 4.0)}.
+\end{document}

@@ -1,0 +1,80 @@
+{
+  "verification_scope": {
+    "lean_declaration": "D5.S3.Geometry.DiscreteGravity.TreeEquationsNonconstantRefutation.result",
+    "lean_statement": "Negation of the global-constancy implication for positive symmetric solutions on locally finite cubic trees; witness q = r = 2, t = 1",
+    "written_proofs": [
+      "General q >= 2, r > 0, r != 1, t > 0 geometric-spine family",
+      "Conjecture 3 counterexamples for every q >= 2",
+      "Ratio-preserving extension from any nontrivial tree with maximum degree <= q+1 to T_q",
+      "Arbitrary {2,3} reciprocal-ratio line solutions extended to T_q, using the source's Theorem 10",
+      "Global constant vertex ratios if and only if constant lengths",
+      "Branch and attachment curvature formulas and their strict inequality",
+      "Boundary and half-half hypothesis comparisons"
+    ],
+    "finite_checks": "Exact rational parameter and neighborhood checks, periodic two-choice line extensions, arbitrary local ratio preservation and curvature formulas; finite domains are in verification.json",
+    "prior_theorems": [
+      {
+        "source": "https://arxiv.org/abs/2006.06716v1",
+        "locator": "Section 5.1, Theorem 10, printed pp. 28-29",
+        "scope": "Classification of strictly monotone positive line solutions by two reciprocal ratios"
+      }
+    ]
+  },
+  "source_coverage": [
+    {
+      "item": "Section 5.2, Conjecture 4, printed p. 32",
+      "status": "refuted-and-corrected",
+      "statement": "Positive nonconstant cubic solutions exist",
+      "problem_id": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant"
+    },
+    {
+      "item": "Section 5.2, Conjecture 3, printed p. 32",
+      "status": "refuted-and-corrected",
+      "statement": "False for every q >= 2; constant global vertex ratios imply constant lengths"
+    },
+    {
+      "item": "Section 5.1, Theorem 9 and Corollary 2",
+      "status": "prior proof cited",
+      "statement": "The q=1 equal-star implication and monotonicity"
+    },
+    {
+      "item": "Section 5.1, Theorem 10",
+      "status": "prior proof cited",
+      "statement": "The line classification is extended to T_q by Lemma 3 and Corollary 4"
+    },
+    {
+      "item": "Section 5, Lemma 15",
+      "status": "prior proof cited",
+      "statement": "Common scaling preserves solutions"
+    },
+    {
+      "item": "Section 5.2, Theorems 11-12",
+      "status": "prior proof cited",
+      "statement": "Half-half classification has different hypotheses"
+    },
+    {
+      "item": "Section 5.2, Remark 11",
+      "status": "proved",
+      "statement": "Our branch and attachment curvatures differ; this is distinct from the cited half-half curvature formula"
+    },
+    {
+      "item": "Section 5.2, Remarks 12-13",
+      "status": "proved",
+      "statement": "Non-half-half examples for odd q >= 3, positive nonconstant examples also for even q >= 2, and arbitrary two-choice spine patterns"
+    },
+    {
+      "item": "Section 3, Theorems 1-3, Remarks 4-5 and Corollary 1",
+      "status": "not covered",
+      "statement": "Boundary-value hypotheses differ"
+    },
+    {
+      "item": "Section 4, Theorems 4-8, Conjectures 1-2 and Remarks 6-10",
+      "status": "not covered",
+      "statement": "Action bounds, lattice and complete-graph extremizers"
+    },
+    {
+      "item": "Classification of general scale patterns",
+      "status": "not covered"
+    }
+  ]
+}

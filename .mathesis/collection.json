@@ -1,7 +1,7 @@
 {
   "git_blobs": {
     ".github/workflows/pages.yml": "7879724db1358178aad7e9bed326a44be44f5a6a",
-    ".mathesis/generated.json": "c8c4baf2d2a691fa81cea9e87f03b88bd38e293e",
+    ".mathesis/generated.json": "d378353f82a274dc78341b330d7b935b66efad86",
     "CHANGELOG.md": "3de93fe97935a8e1610cb907ae3d523c49609c10",
     "CITATION.cff": "c64bd95d264192b2153e81c16fa48c52e9095763",
     "CONTRIBUTING.md": "ea69168fc2cb506b57b00de1ef588aaf011aa3da",
@@ -15,12 +15,13 @@
     "manuscript/note.tex": "95d55e50f39902fe26b37eeef6be3a9073baa4cd",
     "manuscript/verification.json": "5519ac298ef80295fdf3abc444b9b50ee4ce9a3d",
     "manuscript/verify.py": "1621a476c84ba6a9739b9d0512e7b66359b15b0c",
-    "paper.json": "7d35509dbb3b77225fffd3d74f3384f37db37932",
+    "paper.json": "66e09f1ec7acf3028ef7d25cf2636ec71647e787",
     "paper.pdf": "0cc11d5065d77a2b93bcb99642ced3b88f1f9458",
     "site/en/index.html": "47d675025e8d505451a04c3c56bf0e0deb442b64",
-    "site/index.html": "2a163e2146439202ea080d80ec16770e0e53c433",
+    "site/index.html": "5d588a27085933892f0fb9c7cce89668cfbb0fbf",
     "site/mathesis-materials.json": "f6da223eaf319fd21e5c38b6d4f1f43acbe7eee6",
     "site/zh/index.html": "6d07d9e46d797dee61e3a442af785de2491d7083",
+    "source.archive": "7d5fea1b2ca93d3409103d2b1477c3a61264de7b",
     "versions/v2/.mathesis/generated.json": "2b0adf61f79104ff8588b3ad150accaf098226af",
     "versions/v2/CHANGELOG.md": "3de93fe97935a8e1610cb907ae3d523c49609c10",
     "versions/v2/CITATION.cff": "c64bd95d264192b2153e81c16fa48c52e9095763",
@@ -36,12 +37,13 @@
     "versions/v2/manuscript/verification.json": "5519ac298ef80295fdf3abc444b9b50ee4ce9a3d",
     "versions/v2/manuscript/verify.py": "1621a476c84ba6a9739b9d0512e7b66359b15b0c",
     "versions/v2/paper.json": "979332a2f389a066b5cbd2f25fc88948d02e8ca9",
-    "versions/v2/paper.pdf": "0cc11d5065d77a2b93bcb99642ced3b88f1f9458"
+    "versions/v2/paper.pdf": "0cc11d5065d77a2b93bcb99642ced3b88f1f9458",
+    "versions/v2/source.archive": "7d5fea1b2ca93d3409103d2b1477c3a61264de7b"
   },
   "schema": "mathesis.paper-collection.v1",
   "sha256": {
     ".github/workflows/pages.yml": "f15d983dcb8f324ffdedb50b05f7380e11fda8723d49b5c8f10ef0f414612372",
-    ".mathesis/generated.json": "f31ce9e5f35f8ca9c805f236a62b4ff0b2b8da9be6ac8183e26eda1278161db2",
+    ".mathesis/generated.json": "07fae7e50956c4574622553f56c4be0842209fb97fdf284f0de22573a11205a3",
     "CHANGELOG.md": "41d8f86e08b6e2ac9a6d0c7b25b2f8aeb3649ea746b8e420985e8db9f7c0433c",
     "CITATION.cff": "f1d162bb1bae106cf8bb745b62ecdeecf9384a714ad4c1ad39a89571b1d20b20",
     "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
@@ -55,12 +57,13 @@
     "manuscript/note.tex": "6410aad4e631faaf755d59fbabc48afbd5135aa12018a17ead90f42abb0d4409",
     "manuscript/verification.json": "5750c14e41d02f570fa11fd50b4351dea235f2a2f258e82a30a09a0fd7a4f33b",
     "manuscript/verify.py": "59ad736b50036e2cf6d0faff760f0dc3989e18b130a9d1428c831b4213090b80",
-    "paper.json": "609687f16374657f502ac420db5e0e98221e85b2bb018c84607f55f977a443f1",
+    "paper.json": "ff2c2de1f491160c6feb6ffeed7e49c1541a17c16a1495daf8efd9b7e40e2af5",
     "paper.pdf": "aa102b2c254cc785cdd3e6a1880fd60008c64e5a0e19e98cac23bf2a89f26396",
     "site/en/index.html": "8945a9b4b19aa572a1c1b8ca856ef1f46bdaa11e5bf6c0ae8a2c7887505500ea",
-    "site/index.html": "23c461323887717f0ff4ab0ec8fd4bd3e829ca6c91b8054faa65523de558d601",
+    "site/index.html": "244db1e7a43e6967d130a7e451f43a6fa4211629106e824306d3cc8f6dd29e9f",
     "site/mathesis-materials.json": "930430f250fe09fc0dc80f574043673a32bac26d23ca18fb758d70d09798815e",
     "site/zh/index.html": "9631c05bdf370f09d560f15c90603d3d03c1414ca77c211e0c2e39da4d6e9a9e",
+    "source.archive": "2a6ba6d8f60e700da4b7252088e84ce50bb4ea230d1b4152bbb3250254a1c25a",
     "versions/v2/.mathesis/generated.json": "b72214dbc3c74359b058fb04d1bdbbb6d857ce9c99deb51178e1b6a0c1e8c7bf",
     "versions/v2/CHANGELOG.md": "41d8f86e08b6e2ac9a6d0c7b25b2f8aeb3649ea746b8e420985e8db9f7c0433c",
     "versions/v2/CITATION.cff": "f1d162bb1bae106cf8bb745b62ecdeecf9384a714ad4c1ad39a89571b1d20b20",
@@ -76,7 +79,8 @@
     "versions/v2/manuscript/verification.json": "5750c14e41d02f570fa11fd50b4351dea235f2a2f258e82a30a09a0fd7a4f33b",
     "versions/v2/manuscript/verify.py": "59ad736b50036e2cf6d0faff760f0dc3989e18b130a9d1428c831b4213090b80",
     "versions/v2/paper.json": "16f5766027889c12cf614eae2eeb9c6984a1022973573daf1e66c867a21057c6",
-    "versions/v2/paper.pdf": "aa102b2c254cc785cdd3e6a1880fd60008c64e5a0e19e98cac23bf2a89f26396"
+    "versions/v2/paper.pdf": "aa102b2c254cc785cdd3e6a1880fd60008c64e5a0e19e98cac23bf2a89f26396",
+    "versions/v2/source.archive": "2a6ba6d8f60e700da4b7252088e84ce50bb4ea230d1b4152bbb3250254a1c25a"
   },
   "version": 2,
   "work": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant"

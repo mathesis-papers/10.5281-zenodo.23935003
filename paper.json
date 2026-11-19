@@ -2,16 +2,16 @@
   "files": {
     "pdf": {
       "bytes": 75130,
-      "matches_public": null,
+      "matches_public": true,
       "path": "paper.pdf",
-      "public_sha256": null,
+      "public_sha256": "aa102b2c254cc785cdd3e6a1880fd60008c64e5a0e19e98cac23bf2a89f26396",
       "sha256": "aa102b2c254cc785cdd3e6a1880fd60008c64e5a0e19e98cac23bf2a89f26396"
     },
     "source": {
       "bytes": 14150,
-      "matches_public": null,
+      "matches_public": true,
       "path": "source.archive",
-      "public_sha256": null,
+      "public_sha256": "2a6ba6d8f60e700da4b7252088e84ce50bb4ea230d1b4152bbb3250254a1c25a",
       "sha256": "2a6ba6d8f60e700da4b7252088e84ce50bb4ea230d1b4152bbb3250254a1c25a"
     }
   },
@@ -38,6 +38,8 @@
     "license": "CC-BY-4.0",
     "msc": [],
     "pdf": {
+      "bytes": 75130,
+      "sha256": "aa102b2c254cc785cdd3e6a1880fd60008c64e5a0e19e98cac23bf2a89f26396",
       "url": "/api/v1/collected-papers/huang-stoica-xia-zhong-2020-tree-equations-nonconstant/files/pdf?version=2"
     },
     "previous_version": null,
@@ -46,6 +48,8 @@
     "record": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant",
     "repository_name": "10.5281-zenodo.23935003",
     "source": {
+      "bytes": 14150,
+      "sha256": "2a6ba6d8f60e700da4b7252088e84ce50bb4ea230d1b4152bbb3250254a1c25a",
       "url": "/api/v1/collected-papers/huang-stoica-xia-zhong-2020-tree-equations-nonconstant/files/source?version=2"
     },
     "title": "Counterexamples to Conjectures 3 and 4 of Huang, Stoica, Xia and Zhong (arXiv:2006.06716v1, Section 5.2, printed page 32)",

@@ -1,0 +1,24 @@
+{
+  "schema": "mathesis.collection-history.v1",
+  "sha256": {
+    "versions/v2/.mathesis/generated.json": "b72214dbc3c74359b058fb04d1bdbbb6d857ce9c99deb51178e1b6a0c1e8c7bf",
+    "versions/v2/CHANGELOG.md": "41d8f86e08b6e2ac9a6d0c7b25b2f8aeb3649ea746b8e420985e8db9f7c0433c",
+    "versions/v2/CITATION.cff": "f1d162bb1bae106cf8bb745b62ecdeecf9384a714ad4c1ad39a89571b1d20b20",
+    "versions/v2/CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
+    "versions/v2/LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+    "versions/v2/README.md": "7c4864d1f1496e4d0bb52a3ea5c2e28c7718f098205e3660097c455be1564822",
+    "versions/v2/formalization/nodes.json": "c50179a30a44abd1303be3f5f81a0971d9c5ac385aa0ecff3edb56b50b55043c",
+    "versions/v2/manuscript/README.md": "bb881d42dc9997b9d248309d908d322cccf2a8046552c77f16ae659ac30c4659",
+    "versions/v2/manuscript/SHA256SUMS": "5015d57979dfb4d2faf4a463dc35eed3b5b8861ec8b6a257e8238a324f6013c2",
+    "versions/v2/manuscript/coverage.json": "84734b5eadc76596dcf551565efbea9d5e56ba37f9d18af791ed5383b4a6494e",
+    "versions/v2/manuscript/metadata.json": "3db48d769f8aebff1c1180d1897cddb9cd6bf4ef83511e93676bc407f144c4fe",
+    "versions/v2/manuscript/note.tex": "6410aad4e631faaf755d59fbabc48afbd5135aa12018a17ead90f42abb0d4409",
+    "versions/v2/manuscript/verification.json": "5750c14e41d02f570fa11fd50b4351dea235f2a2f258e82a30a09a0fd7a4f33b",
+    "versions/v2/manuscript/verify.py": "59ad736b50036e2cf6d0faff760f0dc3989e18b130a9d1428c831b4213090b80",
+    "versions/v2/paper.json": "16f5766027889c12cf614eae2eeb9c6984a1022973573daf1e66c867a21057c6",
+    "versions/v2/paper.pdf": "aa102b2c254cc785cdd3e6a1880fd60008c64e5a0e19e98cac23bf2a89f26396",
+    "versions/v2/source.archive": "2a6ba6d8f60e700da4b7252088e84ce50bb4ea230d1b4152bbb3250254a1c25a"
+  },
+  "source_commit": "b7447bd5e31ce8b62e68a7b77117b9fe3c04b5a4",
+  "work": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant"
+}

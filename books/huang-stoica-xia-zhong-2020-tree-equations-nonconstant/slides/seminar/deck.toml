@@ -1,0 +1,11 @@
+kind = "academic"
+editions = ["zh", "en"]
+aspect = "4:3"
+structure_colour = "#0e2c8e"
+short_author = "H. Ma, W. Zhang"
+short_title = "Local balance on trees"
+navigation_symbols = false
+
+[title]
+zh = "局部均匀为何不能决定整棵树"
+en = "Why local uniformity does not determine a tree"

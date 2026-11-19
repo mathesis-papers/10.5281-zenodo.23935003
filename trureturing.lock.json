@@ -1,0 +1,17 @@
+{
+  "schema": "trureturing-books.lock.v1",
+  "repo": "the-omega-institute/trureturing",
+  "branch": "dev",
+  "commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+  "pinned_at": "2026-11-08T12:32:04Z",
+  "declarations": {
+    "D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.result": {
+      "module": "D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation",
+      "name": "D5.S3.Geometry.DiscreteGravity.TreeEquationsNonconstantRefutation.result",
+      "kind": "theorem",
+      "statement_id": "sha256:e3019cb565cd939fa4874b00f7deabb56125682699bd4c8c8987846f4baae731",
+      "line": 254,
+      "signature": "theorem result : ¬ claim"
+    }
+  }
+}

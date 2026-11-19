@@ -1,0 +1,153 @@
+{
+  "voice": "af_heart",
+  "speed": 0.94,
+  "say": {
+    "Lean": "Leen"
+  },
+  "music": {
+    "bpm": 84,
+    "progression": "d-minor"
+  },
+  "scenes": [
+    {
+      "id": "question",
+      "name": "LOCAL AND GLOBAL",
+      "lead": 1.0,
+      "tail": 0.8,
+      "lines": [
+        [
+          "Can a network obey a balance rule at every edge, yet have different lengths in different places?",
+          "一张路网能否每条边都满足平衡规则，长度却随位置改变？"
+        ],
+        [
+          "A tree is a connected graph with no cycles. We use an infinite tree with three neighbors at every vertex.",
+          "树是连通且无环的图。我们先用每个顶点都有三个邻居的无限树。"
+        ],
+        [
+          "Haobo Ma and Wenlin Zhang construct a counterexample: lengths vary along one infinite path, while every junction away from it has equal incident lengths.",
+          "Haobo Ma 与 Wenlin Zhang 构造了反例：长度沿一条无限路径改变，而路径外每个路口的入射边都等长。"
+        ]
+      ]
+    },
+    {
+      "id": "equation",
+      "name": "THE LOCAL RULE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "lines": [
+        [
+          "At a junction, add the reciprocals of the lengths to get c. Add their squares to get d. The ratio c over d is its effective length R.",
+          "在一个路口，把边长倒数相加得到 c，把这些倒数的平方相加得到 d。比值 c 除以 d 是有效长度 R。"
+        ],
+        [
+          "Equal incident lengths give that same effective length. If three edges all have length two, R is two.",
+          "入射边全等长时，有效长度就等于边长。三条边都长二时，R 就是二。"
+        ],
+        [
+          "The edge rule uses the two endpoint ratios: the length is the sum of their squares divided by their sum. Ratios one and two require length five thirds.",
+          "边的规则使用两端比值：边长等于平方和除以和。两端比值为一和二时，边长须为三分之五。"
+        ],
+        [
+          "But the ratios must also come from the surrounding edges. This consistency is the problem to solve.",
+          "但比值本身还须由周围的边算出。要解决的正是这种相容性。"
+        ]
+      ]
+    },
+    {
+      "id": "spine",
+      "name": "CONSTRUCT THE TREE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "lines": [
+        [
+          "Take a path extending forever in both directions. Call it the spine, and number its vertices by all integers n.",
+          "选一条向两端无限延伸的路径，称为主干，用所有整数 n 标记顶点。"
+        ],
+        [
+          "At vertex n, attach an infinite binary branch. Every edge in that branch, including its attachment, has length two to the power n.",
+          "在顶点 n 接一棵无限二叉分支。分支中每条边，包括连接边，都长二的 n 次方。"
+        ],
+        [
+          "Give the next spine edge five thirds times that scale. Each spine vertex has two spine neighbors and one branch; each branch vertex has a parent and two children.",
+          "下一条主干边取该尺度的三分之五倍。主干点有两个主干邻居和一个分支；分支点有一个父点、两个子点。"
+        ],
+        [
+          "The graph is a tree of degree three. The drawing shows only a finite portion; its lengths are labels, not distances on the screen.",
+          "这给出每点度数为三的树。图中仅画有限部分；长度由标签表示，并非屏幕上的距离。"
+        ]
+      ]
+    },
+    {
+      "id": "check",
+      "name": "CHECK EVERY EDGE TYPE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "lines": [
+        [
+          "At the central spine vertex, the three lengths are five sixths, five thirds, and one. Both sums are fourteen fifths, so its ratio is one.",
+          "在中央主干点，三条边长为六分之五、三分之五和一。倒数和与倒数平方和都为五分之十四，所以比值是一。"
+        ],
+        [
+          "Scaling the lengths by two to the power n makes the ratio two to the power n. Every vertex in the attached branch has that same ratio.",
+          "把长度乘以二的 n 次方，比值也变成二的 n 次方。所接分支内的每个顶点都有同样的比值。"
+        ],
+        [
+          "Branch and attachment edges join equal ratios. Spine edges join ratios s and twice s, and have exactly the required length, five thirds s.",
+          "分支边和连接边连接相等的比值。主干边两端比值为 s 与二倍 s，其长度恰为所需的三分之五倍 s。"
+        ],
+        [
+          "These two cases check every edge of the infinite tree. An attachment of length one sits beside a spine edge of length five thirds, proving nonconstancy.",
+          "这两种情况检查了无限树的每条边。长一的连接边紧邻长三分之五的主干边，证明整体不等长。"
+        ]
+      ]
+    },
+    {
+      "id": "extension",
+      "name": "WHY BRANCHES DO NOT DISTURB BALANCE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "lines": [
+        [
+          "Here is the general mechanism. Start with any junction whose ratio is R. Add m edges, each of length R.",
+          "一般机制如下：从比值为 R 的路口出发，增加 m 条边，每条长 R。"
+        ],
+        [
+          "The new sums are c plus m over R, and d plus m over R squared. Since c equals R times d, the ratio stays R.",
+          "新的和分别为 c 加 m 除以 R，以及 d 加 m 除以 R 平方。由于 c 等于 R 乘 d，比值仍为 R。"
+        ],
+        [
+          "Extend each new edge into a constant-length branch. Its new vertices also have ratio R, so every new edge balances and every old edge keeps its equation.",
+          "把新边延伸为等长分支。新顶点比值也为 R，于是所有新边平衡，所有旧边仍满足原方程。"
+        ],
+        [
+          "This fills missing neighbors in any connected, locally finite tree solution with an edge and bounded degree, producing the corresponding regular tree solution.",
+          "这能为任意连通、局部有限、有边且度数有相应上界的树解补足邻居，得到对应正则树上的解。"
+        ]
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "RESULT AND SCOPE",
+      "lead": 1.0,
+      "tail": 0.8,
+      "lines": [
+        [
+          "The public Lean theorem proves the cubic constancy conjecture false. Its proof constructs this fixed infinite example.",
+          "公开 Lean 定理证明三正则树常值猜想为假，其证明构造的正是这个固定的无限反例。"
+        ],
+        [
+          "The written paper also proves a family for every integer q at least two, with positive scales t times r to the power n, where r is positive and different from one.",
+          "论文还书面证明了每个整数 q 至少为二时的家族：尺度为正数 t 乘 r 的 n 次方，其中 r 为正且不等于一。"
+        ],
+        [
+          "These scales approach zero at one end and grow without bound at the other. They do not satisfy the separate asymptotically constant boundary hypothesis.",
+          "这些尺度在一端趋零、另一端无界增长，不满足另一个定理要求的渐近常值边界条件。"
+        ],
+        [
+          "The lesson is precise: equal incident lengths at a junction do not force global constancy. Attaching branches can preserve local balance while the whole geometry varies.",
+          "结论很明确：一个路口的入射边等长，不能迫使整体等长。添加分支可以保留局部平衡，同时让整体几何变化。"
+        ]
+      ]
+    }
+  ]
+}

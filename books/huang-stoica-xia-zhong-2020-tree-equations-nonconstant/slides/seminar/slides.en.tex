@@ -1,0 +1,245 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{Why local uniformity does not determine a tree}
+\author{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1} Chrono AI, Singapore \and \inst{2} National University of Singapore, Singapore}
+\date{2026-11-15}
+\begin{document}
+% Manuscript: Overview
+\begin{frame}
+\titlepage
+\note{Explain Ma and Zhang's version-2 counterexample. Begin with one junction, then show why the construction works on an infinite tree.}
+\end{frame}
+% Manuscript: Contents
+\begin{frame}{Route}
+\tableofcontents
+\note{Move from trees and the local equation to the spine counterexample and extension principle. Finish by distinguishing the written results from the exact public Lean conclusion.}
+\end{frame}
+\section{Question}
+\subsection{Local equation}
+% Manuscript: Section 1; HSXZ Section 5.2, Conjectures 3 and 4, printed p.32
+\begin{frame}{Can uniformity spread?}
+\begin{itemize}
+\item A tree is connected and has no cycles. Lengths are positive labels.
+\item $T_q$ has $q+1$ neighbors per vertex; $T_2$ has three.
+\item Does local balance plus one equal-length junction force global constancy?
+\end{itemize}
+\begin{block}{Answer and mechanism}
+No. Vary the scale along a bi-infinite spine and attach constant-length branches. The branches preserve the original vertex ratios.
+\end{block}
+\note{Conjecture 4 concerns the cubic tree. Conjecture 3 imposes an equal-star condition. One construction answers both questions.}
+\end{frame}
+% Manuscript: Section 1, definitions and equation (motion)
+\begin{frame}{A junction's effective length}
+\[
+c_i=\sum_{j\sim i}\ell_{ij}^{-1},\qquad
+ d_i=\sum_{j\sim i}\ell_{ij}^{-2},\qquad R_i=c_i/d_i.
+\]
+Three edges of length $2$: $c_i=3/2$, $d_i=3/4$, $R_i=2$.
+\begin{block}{Every edge must satisfy}
+\[
+\frac{R_i^2+R_j^2}{\ell_{ij}}-R_i-R_j=0,
+\qquad \ell_{ij}=\frac{R_i^2+R_j^2}{R_i+R_j}.
+\]
+\end{block}
+Lengths determine ratios; the ratios must reproduce the lengths.
+\note{Positive lengths and nonempty finite neighbor sets ensure positive denominators. Ratios $1,2$ require length $5/3$, but we must also recover those ratios from the incident edges.}
+\end{frame}
+% Manuscript: Theorem 1 specialized to q=r=2, t=1
+\begin{frame}{Build the cubic example}
+\[
+\cdots\quad v_{-1}\;---\;v_0\;---\;v_1\quad\cdots
+\]
+\begin{itemize}
+\item Attach an infinite binary branch at every $v_n$.
+\item All edges in that branch, including its attachment, have length $s_n=2^n$.
+\item Spine edge $v_nv_{n+1}$ has length $(5/3)2^n$.
+\end{itemize}
+Every branch vertex has a parent and two children.
+
+The graph is connected, acyclic and degree three everywhere.
+\note{The drawing shows adjacency, not metric scale. Finite Boolean words index each branch. Following parents reaches the spine; one attachment per branch cannot create a cycle.}
+\end{frame}
+% Manuscript: Theorem 1 proof; cubic computation after Corollary 2
+\begin{frame}{Calculate one junction}
+Three lengths at $v_0$: $5/6,\ 5/3,\ 1$.
+\[
+c_{v_0}=6/5+3/5+1=14/5.
+\]
+\[
+d_{v_0}=36/25+9/25+1=14/5.
+\]
+Hence $R_{v_0}=1$.
+
+Scaling incident lengths by $s$ divides $c$ by $s$ and $d$ by $s^2$.
+\begin{block}{Propagating the scale}
+$R_{v_n}=2^n$; every vertex in its branch also has $R=2^n$.
+\end{block}
+\note{The two sums are different expressions. Their equality is engineered by the coefficient $5/3$. An equal-length branch has ratio equal to its edge length.}
+\end{frame}
+% Manuscript: Corollary 2 and Theorem 1 proof
+\begin{frame}{Two edge types cover everything}
+\begin{block}{Branch and attachment edges}
+Both ratios and length equal $s$: $2s^2/s-2s=0$.
+\end{block}
+\begin{block}{Spine edges}
+Ratios are $s,2s$ and length is $5s/3$:
+\[
+\frac{s^2+(2s)^2}{5s/3}-s-2s=0.
+\]
+\end{block}
+An attachment has length $1$; its neighbor has length $5/3$.
+
+Every off-spine vertex is uniform, but the solution is nonconstant.
+\note{The two cases cover infinitely many edges. No finite-sample inference is used. This refutes Conjecture 4 and the cubic instance of Conjecture 3.}
+\end{frame}
+\section{Construction}
+\subsection{Construction mechanism}
+% Manuscript: Theorem 1
+\begin{frame}{A family in every degree}
+\begin{bookresult}{geometric-family}
+Fix integer $q\ge2$, $t>0$, $r>0$ with $r\ne1$. Put
+\[
+s_n=tr^n,\qquad a=\frac{r^2+1}{r+1}.
+\]
+Spine edges have length $as_n$. At $v_n$ attach $q-1$ rooted $q$-ary trees with every edge, including attachments, of length $s_n$.
+
+This is a positive nonconstant solution on $T_q$; the ratio at $v_n$ and throughout its branches is $s_n$.
+\end{bookresult}
+Key identity: $a(r+1)=r^2+1$.
+\note{The technical chapter gives the full proof. The identity equates the normalized reciprocal sums. Nonconstancy follows from $a-1=r(r-1)/(r+1)\ne0$.}
+\end{frame}
+% Manuscript: Lemma 3
+\begin{frame}{Fill neighbors without disturbing the solution}
+\begin{bookresult}{branch-extension}
+Let integer $q\ge2$. Let $H$ be connected, locally finite, have an edge, and have degrees at most $q+1$.
+
+Every positive solution extends to a positive solution on $T_q$, preserving original lengths and ratios. At $i$ attach $q+1-\deg_H(i)$ rooted $q$-ary trees, with all new edges, including attachments, of length $R_i$.
+\end{bookresult}
+Vertices already of full degree receive no branches.
+\note{A connected nontrivial tree has no isolated vertices, so every $R_i>0$. The enlarged graph is connected, acyclic and degree $q+1$ everywhere.}
+\end{frame}
+% Manuscript: Lemma 3 proof
+\begin{frame}{The decisive cancellation}
+Add $m$ edges of length $R$, starting from $c=Rd$:
+\[
+c'=c+m/R.
+\]
+\[
+d'=d+m/R^2.
+\]
+\begin{block}{The ratio stays fixed}
+$Rd'=Rd+m/R=c+m/R=c'$, hence $R'=R$.
+\end{block}
+Old edges keep their lengths and endpoint ratios. Every new edge has length and both endpoint ratios $R$.
+
+Thus old and new equations all hold.
+\note{The added length is not arbitrary: it must equal the old ratio $R$. This proves extension, rather than numerically testing a neighborhood of the spine.}
+\end{frame}
+% Manuscript: Corollary 4; HSXZ Theorem 10
+\begin{frame}{Choose two or three at every step}
+\begin{bookresult}{two-choice-patterns}
+Let $q\ge2$, any bi-infinite sequence $b_n\in\{2,3\}$, and $L_0>0$, with $L_{n-1}/L_n=b_n$.
+
+There is a solution on $T_q$ with spine lengths $L_n$, equal incident lengths off the spine, and global nonconstancy. If both choices occur, it is not one geometric progression.
+\end{bookresult}
+Example: $1,1/2,1/6,1/12$. No periodicity is required.
+\[
+\frac{b(b+1)}{b^2+1}=\frac65\quad(b=2,3).
+\]
+\note{The source uses Huang and colleagues' Theorem 10. The technical chapter also checks directly that $R_n=(6/5)L_n$ on the line and the residual numerator is $6(b-2)(b-3)$, then applies extension.}
+\end{frame}
+\section{Scope}
+\subsection{Conclusions and evidence}
+% Manuscript: Corollary 5
+\begin{frame}{The correct global condition}
+\begin{bookresult}{constant-ratios}
+For a positive solution on a connected locally finite tree with at least one edge:
+\[
+\text{constant edge lengths}\quad\Longleftrightarrow\quad
+\text{constant vertex ratios}.
+\]
+\end{bookresult}
+If $R_i=s>0$, the equation gives $\ell_{ij}=s$.
+
+If $\ell_{ij}=s>0$, then $c_i=\deg(i)/s$ and $d_i=\deg(i)/s^2$, so $R_i=s$.
+
+One equal-length junction does not equate ratios everywhere.
+\note{Prove both directions. Positivity permits division by $s$; connectedness and an edge ensure nonzero vertex degrees.}
+\end{frame}
+% Manuscript: Corollary 6; HSXZ equation (4.10), printed p.13
+\begin{frame}{Curvature varies too}
+\small
+\begin{bookresult}{nonconstant-curvature}
+For the geometric-spine solution put $B=q-1+(r+1)^2/(r^2+1)$.
+\[
+K_{\rm branch}=4/(q+1)-2,
+\]
+\[
+K_{\rm attach}=2/B+2/(q+1)-2.
+\]
+For $r\ne1$, $K_{\rm attach}>K_{\rm branch}$, so curvature is nonconstant. At $q=r=2$ the values are $-2/3$ and $-13/21$.
+\end{bookresult}
+$(r-1)^2>0$ gives $B<q+1$. Both edge types exist.
+\note{The source defines $K_{ij}=2\ell_{ij}^{-2}(1/d_i+1/d_j)-(R_i+R_j)/\ell_{ij}$. Branch vertices have $d_i=(q+1)/s_n^2$ and spine vertices have $d_i=B/s_n^2$.}
+\end{frame}
+% Manuscript: Section 3, boundary and prior-work discussion
+\begin{frame}{Infinity and earlier work}
+\begin{itemize}
+\item $r=1$ gives constant lengths and zero curvature difference.
+\item For $r\ne1$, one end tends to zero and the other is unbounded; every edge is positive.
+\item The asymptotically constant uniqueness theorem has different hypotheses.
+\item Gubser et al. and Huang et al. already had odd-$q$ examples.
+\item This family also covers even $q$, without half-half grouping.
+\end{itemize}
+\begin{block}{Significance}
+Local-to-global rigidity fails; extension explains the mechanism.
+\end{block}
+\note{This is not a classification of all solutions. The three distinct incident lengths at a spine vertex fall outside the half-half hypotheses of the source's Theorems 11--12.}
+\end{frame}
+% Manuscript: Section 4, Verification scope; public theorem result
+\begin{frame}{The exact public theorem}
+\small
+\begin{bookresult}{cubic-negation}
+The universal assertion that every positive symmetric edge-length solution on a locally finite cubic tree is constant is false.
+\end{bookresult}
+Its proof internally constructs the $q=r=2,t=1$ witness.
+
+The parameterized family, extension, patterns, iff criterion and curvature result have separate complete written proofs.
+\note{Do not enlarge this negation into a parameterized theorem. The concrete graph and supporting lemmas are private declarations inside its proof; they do not provide a public all-parameter theorem.}
+\end{frame}
+\appendix
+\section{Appendix}
+% Manuscript: Theorem 1 proof; appendix derivation
+\begin{frame}{Algebra of the spine ratio}
+\small
+Incident lengths are $as_n/r$, $as_n$ and $q-1$ copies of $s_n$.
+\[
+c_{v_n}=s_n^{-1}((r+1)/a+q-1).
+\]
+\[
+d_{v_n}=s_n^{-2}((r^2+1)/a^2+q-1).
+\]
+$a(r+1)=r^2+1$ equates the positive brackets, giving $R_{v_n}=s_n$.
+\[
+a-1=\frac{r(r-1)}{r+1}\ne0.
+\]
+An attachment and its neighboring spine edge differ.
+\note{The appendix retains the general calculation, while the main talk begins with fractions. No infinite sum is used: every vertex sum is finite.}
+\end{frame}
+% Manuscript: Bibliography
+\begin{frame}{Sources and contribution}
+\footnotesize
+\begin{itemize}
+\item H. Ma, W. Zhang, version 2 (2026). \href{https://doi.org/10.5281/zenodo.23935004}{DOI: 10.5281/zenodo.23935004}.
+\item A. Huang, B. Stoica, X. Xia, X. Zhong, \href{https://arxiv.org/abs/2006.06716v1}{arXiv:2006.06716v1}, §§5.1--5.2; curvature equation (4.10).
+\item S. S. Gubser et al., \emph{Edge length dynamics on graphs with applications to $p$-adic AdS/CFT}, \href{https://doi.org/10.1007/JHEP06(2017)157}{JHEP 2017, 157}, §5.
+\end{itemize}
+Full references and six focused formalization requests are in the book appendix.
+
+Choose a statement in the contribution appendix and help extend its formal proof.
+\note{Credit the original equations, the earlier odd-degree examples, and the line classification at the points where they are used. A natural further question is to classify more general scale patterns.}
+\end{frame}
+% Manuscript: Verification ledger, generated from exact book results
+\FormalVerification
+\end{document}

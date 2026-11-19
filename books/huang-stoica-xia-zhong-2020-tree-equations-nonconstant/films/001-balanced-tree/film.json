@@ -1,0 +1,29 @@
+{
+  "duration": "3:44",
+  "id": "001-balanced-tree",
+  "lean": [
+    "D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.result"
+  ],
+  "narration": {
+    "engine": "Kokoro-82M v1.0 (onnx)",
+    "language": "en",
+    "voice": "af_heart"
+  },
+  "outputs": {
+    "cover": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant_001_cover.jpg",
+    "narrated_720p": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant_001_720p_narrated.mp4"
+  },
+  "publication_basis": "pinned",
+  "released": "2026-11-15",
+  "resolution": "1280x720@30",
+  "style": "trureturing cyberpunk · deterministic canvas",
+  "subject": "https://github.com/the-omega-institute/trureturing",
+  "subtitles": [
+    "zh",
+    "en"
+  ],
+  "summary": "A cubic-tree counterexample, its two edge checks and the cancellation that lets constant-length branches preserve vertex ratios.",
+  "summary_zh": "三正则树反例、两种边的检验，以及等长分支保持顶点比值不变的消去机制。",
+  "title": "Locally balanced, globally nonuniform",
+  "title_zh": "局部平衡，整体不均匀"
+}

@@ -1,0 +1,88 @@
+{
+  "book": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant",
+  "pending_claims": [],
+  "results": {
+    "geometric-family": {
+      "claim": "collected:huang-stoica-xia-zhong-2020-tree-equations-nonconstant:2:s1",
+      "gids": [],
+      "comparison_verdict": "special case",
+      "compared_public_gid": "D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Theorem 1, Section 1 — Geometric-spine solutions on every regular tree",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/125"
+      }
+    },
+    "conjecture-refutations": {
+      "claim": "collected:huang-stoica-xia-zhong-2020-tree-equations-nonconstant:2:s2",
+      "gids": [],
+      "comparison_verdict": "special case",
+      "compared_public_gid": "D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 2, Section 1 — Equal-star rigidity fails on every regular tree",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/126"
+      }
+    },
+    "branch-extension": {
+      "claim": "collected:huang-stoica-xia-zhong-2020-tree-equations-nonconstant:2:s3",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Lemma 3, Section 2 — Extend a tree solution by constant-length branches",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/127"
+      }
+    },
+    "two-choice-patterns": {
+      "claim": "collected:huang-stoica-xia-zhong-2020-tree-equations-nonconstant:2:s4",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 4, Section 2 — Arbitrary two-choice spine patterns on regular trees",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/128"
+      }
+    },
+    "constant-ratios": {
+      "claim": "collected:huang-stoica-xia-zhong-2020-tree-equations-nonconstant:2:s5",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 5, Section 2 — Constant lengths if and only if constant vertex ratios",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/129"
+      }
+    },
+    "nonconstant-curvature": {
+      "claim": "collected:huang-stoica-xia-zhong-2020-tree-equations-nonconstant:2:s6",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 6, Section 3 — Nonconstant curvature of geometric-spine solutions",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/130"
+      }
+    },
+    "cubic-negation": {
+      "claim": "collected:huang-stoica-xia-zhong-2020-tree-equations-nonconstant:2:s2",
+      "gids": [
+        "D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.result"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Geometry/DiscreteGravity/TreeEquationsNonconstantRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "Counterexamples to Conjectures 3 and 4 of Huang, Stoica, Xia and Zhong (arXiv:2006.06716v1, Section 5.2, printed page 32)",
+    "zh": "Counterexamples to Conjectures 3 and 4 of Huang, Stoica, Xia and Zhong (arXiv:2006.06716v1, Section 5.2, printed page 32)"
+  },
+  "version": 2,
+  "work": "huang-stoica-xia-zhong-2020-tree-equations-nonconstant"
+}

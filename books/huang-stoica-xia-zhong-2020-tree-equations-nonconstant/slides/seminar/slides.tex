@@ -1,0 +1,248 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{局部均匀为何不能决定整棵树}
+\author{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1} Chrono AI, Singapore \and \inst{2} National University of Singapore, Singapore}
+\date{2026-11-15}
+\begin{document}
+% Manuscript: Overview
+\begin{frame}
+\titlepage
+\note{介绍 Ma 与 Zhang 第 2 版的具体反例。先算一个路口，再解释为何它在无限树上成立。}
+\end{frame}
+% Manuscript: Contents
+\begin{frame}{路线}
+\tableofcontents
+\note{先解释树与局部方程，再给主干反例和扩张原则。最后区分完整书面证明与公开 Lean 结论。}
+\end{frame}
+\section{问题与例子}
+\subsection{局部方程}
+% Manuscript: Section 1; HSXZ Section 5.2, Conjectures 3 and 4, printed p.32
+\begin{frame}{局部整齐能否传播？}
+\begin{itemize}
+\item 树：连通、无环的图。边长是正数，不是图上距离。
+\item $T_q$ 每点有 $q+1$ 个邻居；$T_2$ 每点有三个。
+\item 问题：局部平衡加一个等长路口，能否迫使整体等长？
+\end{itemize}
+\begin{block}{答案与机制}
+不能。沿双向无限主干改变尺度，在旁边接等长分支。
+分支不改变原顶点的有效长度。
+\end{block}
+\note{原猜想 4 限定三正则树；猜想 3 是等长星形条件。接下来构造一个同时回答两者的例子。}
+\end{frame}
+% Manuscript: Section 1, definitions and equation (motion)
+\begin{frame}{路口的有效长度}
+\[
+c_i=\sum_{j\sim i}\ell_{ij}^{-1},\qquad
+ d_i=\sum_{j\sim i}\ell_{ij}^{-2},\qquad R_i=c_i/d_i.
+\]
+三条边都长 $2$：$c_i=3/2$，$d_i=3/4$，$R_i=2$。
+\begin{block}{每条边都要满足}
+\[
+\frac{R_i^2+R_j^2}{\ell_{ij}}-R_i-R_j=0,
+\qquad \ell_{ij}=\frac{R_i^2+R_j^2}{R_i+R_j}.
+\]
+\end{block}
+边长决定比值；比值又必须与边长相容。
+\note{正边长与非空有限邻居集保证所有分母为正。若两端比值为 $1,2$，边长应为 $5/3$；还必须检查周围的边确实产生这些比值。}
+\end{frame}
+% Manuscript: Theorem 1 specialized to q=r=2, t=1
+\begin{frame}{先造三正则树}
+\[
+\cdots\quad v_{-1}\;---\;v_0\;---\;v_1\quad\cdots
+\]
+\begin{itemize}
+\item 每个 $v_n$ 接一棵无限二叉分支。
+\item 分支含连接边，全部长 $s_n=2^n$。
+\item 主干边 $v_nv_{n+1}$ 长 $(5/3)2^n$。
+\end{itemize}
+每个分支顶点有一个父点、两个子点。
+
+全图连通无环，且每点度数恰为三。
+\note{画的是拓扑关系而非按比例长度。分支由有限布尔词标记，沿父边有限步到达主干，所以连通；单一连接口不会制造环。}
+\end{frame}
+% Manuscript: Theorem 1 proof; cubic computation after Corollary 2
+\begin{frame}{只算一个路口}
+$v_0$ 的三条边：$5/6,\ 5/3,\ 1$。
+\[
+c_{v_0}=6/5+3/5+1=14/5.
+\]
+\[
+d_{v_0}=36/25+9/25+1=14/5.
+\]
+因此 $R_{v_0}=1$。
+
+全部入射边乘以 $s$，则 $c$ 除以 $s$、$d$ 除以 $s^2$。
+\begin{block}{尺度传播}
+$R_{v_n}=2^n$；分支中所有顶点也有 $R=2^n$。
+\end{block}
+\note{这里有两个不同的和，碰巧相等是系数 $5/3$ 的设计结果。等长分支的比值直接等于边长。}
+\end{frame}
+% Manuscript: Corollary 2 and Theorem 1 proof
+\begin{frame}{两种边，检查全部}
+\begin{block}{分支边与连接边}
+两端比值、边长均为 $s$：$2s^2/s-2s=0$。
+\end{block}
+\begin{block}{主干边}
+两端比值为 $s,2s$，边长 $5s/3$：
+\[
+\frac{s^2+(2s)^2}{5s/3}-s-2s=0.
+\]
+\end{block}
+连接边长 $1$，相邻主干边长 $5/3$：整体不等长。
+
+主干外每点入射边等长：局部整齐不迫使整体整齐。
+\note{两个情形覆盖无限多条边。无需从有限样本推断无限结论。此例否定原猜想 4 及三正则树上的猜想 3。}
+\end{frame}
+\section{家族与扩张}
+\subsection{构造机制}
+% Manuscript: Theorem 1
+\begin{frame}{所有分叉数的显式家族}
+\begin{bookresult}{geometric-family}
+给定整数 $q\ge2$、$t>0$、$r>0$ 且 $r\ne1$，令
+\[
+s_n=tr^n,\qquad a=\frac{r^2+1}{r+1}.
+\]
+主干边长 $as_n$；每个 $v_n$ 接 $q-1$ 棵有根 $q$ 叉树，分支含连接边都长 $s_n$。
+
+这是 $T_q$ 上的正的不等长解，$v_n$ 及其分支内每个顶点的比值均为 $s_n$。
+\end{bookresult}
+关键恒等式：$a(r+1)=r^2+1$。
+\note{一般证明在技术章。两个归一化的倒数和因恒等式相等；$a-1=r(r-1)/(r+1)\ne0$ 保证不等长。}
+\end{frame}
+% Manuscript: Lemma 3
+\begin{frame}{补足邻居而不扰动原解}
+\begin{bookresult}{branch-extension}
+整数 $q\ge2$。$H$ 连通、局部有限、至少有一条边，且度数至多 $q+1$。
+
+每个正长度解可扩张为 $T_q$ 的正长度解，保留原边长和原顶点比值。在 $i$ 接 $q+1-\deg_H(i)$ 棵有根 $q$ 叉树，新分支含连接边均长原比值 $R_i$。
+\end{bookresult}
+没有缺失邻居的顶点无需增加分支。
+\note{连通非平凡树没有孤立顶点，故每个 $R_i>0$。新图连通无环且所有度数为 $q+1$。}
+\end{frame}
+% Manuscript: Lemma 3 proof
+\begin{frame}{证明的核心只有一次消去}
+增加 $m$ 条长 $R$ 的边，且原来 $c=Rd$：
+\[
+c'=c+m/R.
+\]
+\[
+d'=d+m/R^2.
+\]
+\begin{block}{比值不变}
+$Rd'=Rd+m/R=c+m/R=c'$，所以 $R'=R$。
+\end{block}
+原边的两端比值和边长不变；新边两端比值与边长都为 $R$。
+
+所以原方程和所有新方程同时成立。
+\note{补分支的长度不能随意选；必须取旧比值 $R$。这一步给出扩张，而不是只在主干附近做数值试验。}
+\end{frame}
+% Manuscript: Corollary 4; HSXZ Theorem 10
+\begin{frame}{每一步独立选二或三}
+\begin{bookresult}{two-choice-patterns}
+$q\ge2$，任意双向序列 $b_n\in\{2,3\}$，$L_0>0$，
+$L_{n-1}/L_n=b_n$。
+
+存在以 $L_n$ 为主干边长的 $T_q$ 解；主干外入射边等长，整体不等长。两种选择都出现时，主干不是一条等比数列。
+\end{bookresult}
+例如 $1,1/2,1/6,1/12$；不要求周期性。
+\[
+\frac{b(b+1)}{b^2+1}=\frac65\quad(b=2,3).
+\]
+\note{原文承接 Huang 等人 Theorem 10。技术章还直接验证：直线上 $R_n=(6/5)L_n$，残差的分子为 $6(b-2)(b-3)$，然后应用扩张引理。}
+\end{frame}
+\section{几何与范围}
+\subsection{结论与证据}
+% Manuscript: Corollary 5
+\begin{frame}{正确的整体条件}
+\begin{bookresult}{constant-ratios}
+在连通、局部有限且有至少一条边的树上，对正长度解：
+\[
+\text{所有边长相同}\quad\Longleftrightarrow\quad
+\text{所有顶点比值相同}.
+\]
+\end{bookresult}
+若 $R_i=s>0$，方程给 $\ell_{ij}=s$。
+
+若 $\ell_{ij}=s>0$，则 $c_i=\deg(i)/s$、$d_i=\deg(i)/s^2$，故 $R_i=s$。
+
+一个等长路口并不能保证全图的比值相同。
+\note{两方向都要证明。正性允许除以 $s$；有边且连通保证顶点度数非零。}
+\end{frame}
+% Manuscript: Corollary 6; HSXZ equation (4.10), printed p.13
+\begin{frame}{曲率也不是常数}
+\small
+\begin{bookresult}{nonconstant-curvature}
+等比主干解中，令 $B=q-1+(r+1)^2/(r^2+1)$。
+\[
+K_{\rm branch}=4/(q+1)-2,
+\]
+\[
+K_{\rm attach}=2/B+2/(q+1)-2.
+\]
+$r\ne1$ 时 $K_{\rm attach}>K_{\rm branch}$，故曲率不恒定。
+$q=r=2$ 时分别为 $-2/3$ 与 $-13/21$。
+\end{bookresult}
+由 $(r-1)^2>0$ 得 $B<q+1$。两类边都存在。
+\note{原曲率定义为 $K_{ij}=2\ell_{ij}^{-2}(1/d_i+1/d_j)-(R_i+R_j)/\ell_{ij}$。分支顶点的 $d_i=(q+1)/s_n^2$，主干顶点的 $d_i=B/s_n^2$。}
+\end{frame}
+% Manuscript: Section 3, boundary and prior-work discussion
+\begin{frame}{无穷远与先前工作}
+\begin{itemize}
+\item $r=1$ 给出等长解，曲率差为零。
+\item $r\ne1$ 时，一端趋零、另一端无界；每条边仍为正。
+\item 不满足原文渐近常值边界条件，不与其唯一性定理冲突。
+\item Gubser 等人与 Huang 等人已有奇数 $q$ 的不等长解。
+\item 本家族还覆盖偶数 $q$，不要求半半分组。
+\end{itemize}
+\begin{block}{意义}
+局部到整体的刚性失败；扩张原则解释了为何失败。
+\end{block}
+\note{此处没有分类所有解的结论。原文 Theorems 11--12 的半半分组不包含主干处三种不同长度。}
+\end{frame}
+% Manuscript: Section 4, Verification scope; public theorem result
+\begin{frame}{公开定理的精确范围}
+\small
+\begin{bookresult}{cubic-negation}
+以下全称断言为假：局部有限三正则树上的正的对称边长若满足所有局部方程，则必处处等长。
+\end{bookresult}
+公开证明内部构造 $q=r=2,t=1$ 的反例。
+
+全参数家族、扩张、二选一模式、充要条件及曲率结论，另有完整书面证明。
+\note{不要把这个否定命题扩大为参数化定理。具体图的定义与相关引理是证明内部的私有声明；没有另一个公开的全参数定理。}
+\end{frame}
+\appendix
+\section{技术附录}
+% Manuscript: Theorem 1 proof; appendix derivation
+\begin{frame}{主干比值的代数}
+\small
+主干顶点的入射边长为 $as_n/r$、$as_n$ 及 $q-1$ 个 $s_n$。
+\[
+c_{v_n}=s_n^{-1}((r+1)/a+q-1).
+\]
+\[
+d_{v_n}=s_n^{-2}((r^2+1)/a^2+q-1).
+\]
+$a(r+1)=r^2+1$ 使两个括号相同且正，故 $R_{v_n}=s_n$。
+\[
+a-1=\frac{r(r-1)}{r+1}\ne0.
+\]
+连接边与主干边不同，得到不等长性。
+\note{附录保留一般计算，主报告先用分数说明相同机制。没有使用无穷和；所有顶点求和都是有限的。}
+\end{frame}
+% Manuscript: Bibliography
+\begin{frame}{来源与贡献}
+\footnotesize
+\begin{itemize}
+\item H. Ma, W. Zhang，第 2 版（2026）。\href{https://doi.org/10.5281/zenodo.23935004}{DOI: 10.5281/zenodo.23935004}。
+\item A. Huang, B. Stoica, X. Xia, X. Zhong，\href{https://arxiv.org/abs/2006.06716v1}{arXiv:2006.06716v1}，§5.1--5.2；曲率方程 (4.10)。
+\item S. S. Gubser 等，\emph{Edge length dynamics on graphs with applications to $p$-adic AdS/CFT}，\href{https://doi.org/10.1007/JHEP06(2017)157}{JHEP 2017, 157}，§5。
+\end{itemize}
+完整文献与六个聚焦形式化请求见书末附录。
+
+可从贡献附录选择一条陈述，继续完成它的形式化证明。
+\note{在用到原方程、先前的奇数度例子及直线解分类时说明来源。进一步可探索更一般尺度模式的分类。}
+\end{frame}
+% Manuscript: Verification ledger, generated from exact book results
+\FormalVerification
+\end{document}
